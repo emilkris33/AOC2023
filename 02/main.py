@@ -1,30 +1,6 @@
 
 def task1():
-    input_file = open("input.txt")
-    possible_sum = 0
-    for line in input_file.readlines():
-        tag, rounds = line.split(':')
-        game_id = int(tag[5:])
-        rounds = rounds.split(';')
-        for round in rounds:
-            pulls = round.split(',')
-            for pull in pulls:
-                pull = pull.strip()
-                space_pos = pull.find(' ')
-                number = int(pull[:space_pos])
-                color = pull[space_pos+1:]
-                if color == "red" and number > 12:
-                    break
-                if color == "green" and number > 13:
-                    break
-                if color == "blue" and number > 14:
-                    break
-            else:
-                continue
-            break
-        else:
-            possible_sum += game_id
-    return possible_sum
+
 
 
 def task2():
